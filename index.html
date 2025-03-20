@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Picker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- Applying background color to the body and giving minimum height equal to the screen givinng flex property for alignment -->
+<body class= "bg-gray-400 min-h-screen flex flex-col items-center justify-center pt-2 md:pb-14">
+    
+    <!-- Making a card div (wrapper) to apply alignment properties in a better way -->
+    <div id="card" class="flex flex-col justify-center md:overflow-auto">
+
+        <!-- Giving white background and other styling properties to the card holding the heading and the emojis -->
+        <div class="bg-white py-3 rounded-xl text-center w-auto">
+            <!-- Adding the heading -->
+            <h1 class="md:text-4xl font-semibold text-indigo-500 mb-6 drop-shadow-md sm:text-3xl">
+                How Is Your Mood Today?
+            </h1>
+
+            <!-- Wrapper div for the emojis -->
+            <div id="mood-picker" class="text-4xl flex justify-center gap-12">
+
+                <!-- Four span elements to hold four emojis in the same line -->
+                <span id="happy" title="Happy" class="cursor-pointer transition transform duration-300 hover:scale-150 hover:text-yellow-500" data-mood="😄">😄</span>
+                <span id="sad" title="Sad" class="cursor-pointer transition transform duration-300 hover:scale-150 hover:text-blue-500">😔</span>
+                <span id="excited" title="Excited" class="cursor-pointer transition transform duration-300 hover:scale-150 hover:text-red-500">🥳</span>
+                <span id="neutral" title="Neutral" class="cursor-pointer transition transform duration-300 hover:scale-150 hover:text-gray-500">😐</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrapper div holding the buttons for different timeline views -->
+    <div class="flex justify-between mt-8 mr-2 gap-2">
+
+        <!-- Creating three buttons for daily, weekly and monthly timeline views -->
+        <button id="daily-btn" class="bg-green-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-600 hover:scale-105 transition">
+            Daily
+        </button>
+        <button id="weekly-btn" class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:scale-105 transition">
+            Weekly
+        </button>
+        <button id="monthly-btn" class="bg-purple-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-purple-600 hover:scale-105 transition">
+            Monthly
+        </button>
+        
+    </div>
+
+    <!-- Creating a MoodGrid div container where in the different timelines will be -->
+    <div id="moodGrid" class="flex flex-col justify-center items-center gap-6 mt-10 w-[43%] p-4 overflow-auto">
+        <!-- Mood data will be displayed here -->
+    </div>
+
+    
+    <!-- Providing a reference to the JavaScript file corresponding to the HTML File -->
+    <script src="./app.js"></script>
+</body>
+</html>
